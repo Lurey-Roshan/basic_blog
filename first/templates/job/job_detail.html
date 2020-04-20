@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title%}
+job
+{%endblock%}
+{% block page_content %}
+<h1 class="text-info text-lg-left pr-10"><a href="{% url 'job:job_index'  %}">Jobs</a>/{{ job.title }} </h1>
+<div class="column jumbotron-fluid">
+    <div class="col-md-15">
+        <img src="{{media_url}}{{job.image.url}}" alt="job.image" class="img-fluid">
+    </div>
+    <div class="col-md-10 offset-md-2pr-5">
+        <h5>Date of completion:</h5>
+        <p><strong>{{job.date_comp}}</strong></p>
+        <br>
+        <h5>About the Job:</h5>
+        <p class="text-center text-justify text-info pr-15">{{ job.text }}</p>
+        
+        
+    </div>
+</div>
+{% endblock %}

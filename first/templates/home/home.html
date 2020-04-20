@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+{% if home %}
+{% for home in home %}
+<div class="jumbotron text-xl-center bg-success">
+		{{home.greeting}}
+		<br>
+		<button type="button" class="btn btn-primary btn-sm"><a href="{{home.email}}"></a>Mail me</button>
+</div>
+
+<div class="jumbotron-fluid">
+	
+		<img  class="img-fluid" src="{{media_url}}{{home.profile_pic.url}}">
+
+
+</div>
+<div>
+	<p class="text-info"><h3>Contact :<strong>{{home.contact}}</strong> </h3></p>
+</div>
+
+{% endfor %}
+{% endif%}
+{% endblock %}
